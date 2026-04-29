@@ -1,18 +1,16 @@
-import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Scanner;
 
 public class EncodeString {
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite um texto: ");
-        String input = scanner.nextLine();
+        String input = sc.nextLine();
 
-        String encoded = Base64.getEncoder()
-                .encodeToString(input.getBytes(StandardCharsets.UTF_8));
+        String encoded = Base64.getEncoder().encodeToString(input.getBytes());
 
-        System.out.println("Base64: " + encoded);
+        System.out.println(encoded);
+
+        sc.close();
     }
 }

@@ -1,22 +1,21 @@
-import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Scanner;
 
 public class DecodeString {
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite um Base64: ");
-        String input = scanner.nextLine();
+        String input = sc.nextLine();
 
         try {
             byte[] decodedBytes = Base64.getDecoder().decode(input);
-            String decoded = new String(decodedBytes, StandardCharsets.UTF_8);
+            String result = new String(decodedBytes);
 
-            System.out.println("Texto original: " + decoded);
+            System.out.println(result);
         } catch (IllegalArgumentException e) {
-            System.out.println("Base64 inválido!");
+            System.out.println("Invalid Base64 input");
         }
+
+        sc.close();
     }
 }

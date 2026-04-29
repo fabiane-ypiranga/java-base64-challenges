@@ -3,10 +3,10 @@ import java.nio.file.Path;
 import java.util.Base64;
 
 public class FileDecoder {
-
     public static void main(String[] args) throws Exception {
 
         Path inputPath = Path.of("output.txt");
+
         String base64 = Files.readString(inputPath);
 
         byte[] decodedBytes = Base64.getDecoder().decode(base64);
