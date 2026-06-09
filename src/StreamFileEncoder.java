@@ -7,26 +7,65 @@ public class StreamFileEncoder {
 
     public static void main(String[] args) {
 
-        String inputFile = "input.txt";
-        String outputFile = "output_stream.txt";
+        // Arquivo entrada
+        String inputFile =
+                "input.txt";
+
+        // Arquivo saída
+        String outputFile =
+                "output_stream.txt";
 
         try (
-                FileInputStream fis = new FileInputStream(inputFile);
-                FileOutputStream fos = new FileOutputStream(outputFile);
-                OutputStream base64Out = Base64.getEncoder().wrap(fos)
+
+                // Lê arquivo
+                FileInputStream fis =
+                        new FileInputStream(
+                                inputFile
+                        );
+
+                // Cria arquivo saída
+                FileOutputStream fos =
+                        new FileOutputStream(
+                                outputFile
+                        );
+
+                // Converte saída para Base64
+                OutputStream base64Out =
+                        Base64.getEncoder()
+                                .wrap(fos)
         ) {
 
-            byte[] buffer = new byte[8192]; // 8KB
+            // Buffer de leitura (8KB)
+            byte[] buffer =
+                    new byte[8192];
+
             int bytesRead;
 
-            while ((bytesRead = fis.read(buffer)) != -1) {
-                base64Out.write(buffer, 0, bytesRead);
+            // Lê arquivo aos poucos
+            while ((bytesRead =
+                    fis.read(buffer))
+                    != -1) {
+
+                // Escreve no arquivo Base64
+                base64Out.write(
+                        buffer,
+                        0,
+                        bytesRead
+                );
             }
 
-            System.out.println("Arquivo codificado com stream com sucesso!");
+            // Mensagem sucesso
+            System.out.println(
+                    "Arquivo codificado com stream com sucesso!"
+            );
 
         } catch (Exception e) {
-            System.out.println("Erro: " + e.getMessage());
+
+            // Mostra erro
+            System.out.println(
+                    "Erro: "
+                            + e.getMessage()
+            );
         }
     }
 }
