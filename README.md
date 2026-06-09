@@ -1,30 +1,23 @@
-# Java Base64 Challenges
+# 🔐 Java Base64 Challenges
 
-Projeto desenvolvido para praticar Java e Git através de desafios progressivos.
+Projeto desenvolvido para praticar codificação e decodificação em Base64 utilizando Java.
 
-## 🚀 Funcionalidades
+## 📚 Funcionalidades desenvolvidas
 
-- Encode de string para Base64
-- Decode de Base64 para string
-- Encode de arquivo para Base64
-- Decode de arquivo Base64 para arquivo original
+* Codificação de texto para Base64
+* Decodificação de texto Base64
+* Codificação de arquivos
+* Decodificação de arquivos
+* Conversão de imagem para Base64 em HTML
+* Stream Encoding
 
-## 📂 Estrutura
+## 🛠 Tecnologias utilizadas
 
-- src/: código fonte
-- input.txt: arquivo de entrada
+* Java
+* Base64 API
+* IntelliJ IDEA
+* Git & GitHub
 
-## 🛠 Tecnologias
+## 🎯 Objetivo do projeto
 
-- Java
-- Git
-
-## ▶️ Como executar
-
-1. Compile o projeto
-2. Execute as classes:
-
-- EncodeString
-- DecodeString
-- FileEncoder
-- FileDecoder
+Praticar manipulação de arquivos, strings, encoding/decoding e reforçar conceitos de Java aplicados na prática.
